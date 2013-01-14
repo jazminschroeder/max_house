@@ -29,6 +29,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'jasmine'
 end
 
 group :development, :test do

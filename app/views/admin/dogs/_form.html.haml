@@ -1,0 +1,23 @@
+= form_for [:admin, @dog], {class: 'form-horizontal'} do |f|
+  %fieldset
+    %legend Some basic info
+  - if @dog.errors.any?
+    #error_explanation
+      %ul
+        - @dog.errors.full_messages.each do |msg|
+          %li= msg
+
+  .control-group
+    %label.control-label Name
+    .controls= f.text_field 'name'
+
+  .control-group
+    %label.control-label Nickname
+    .controls= f.text_field 'nickname'
+
+  .control-group
+    %label.control-label Breed
+    .controls= f.select :breed_id, Breed.all.map{|breed| [breed.name, breed.id]}
+
+  .control-group
+    .controls= f.submit 'Save', class: 'btn primary'

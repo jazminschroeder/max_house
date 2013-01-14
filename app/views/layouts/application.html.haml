@@ -1,0 +1,21 @@
+!!! 5
+%html
+  %head
+    %title MaxHouse
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          .nav-collapse.collapse
+            %ul.nav
+              %li= link_to 'Max House', ""
+              %li= link_to 'My Friends', ""
+              %li= link_to 'Join Me', ""
+              %li= link_to 'Help', ""
+
+            %form.navbar-search.pull-right
+              %input.search-query{type: 'text', placeholder: 'Search'}
+    .container= yield

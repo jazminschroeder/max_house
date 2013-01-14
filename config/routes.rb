@@ -1,6 +1,12 @@
 MaxHouse::Application.routes.draw do
 
+  namespace :admin do
+    resources :dogs
+  end
+
+
   resources :breeds
+  resources :dogs
 
 
   # The priority is based upon order of creation:

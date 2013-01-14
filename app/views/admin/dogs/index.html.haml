@@ -1,0 +1,17 @@
+%h1 Dog Listing
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @dogs.each do |admin_dog|
+    %tr
+      %td= link_to 'Show', admin_dog
+      %td= link_to 'Edit', edit_admin_dog_path(admin_dog)
+      %td= link_to 'Destroy', admin_dog, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Dog', new_admin_dog_path
