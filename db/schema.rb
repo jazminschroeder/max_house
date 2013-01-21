@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121219201453) do
+ActiveRecord::Schema.define(:version => 20130116193224) do
 
   create_table "admin_dogs", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -37,5 +37,16 @@ ActiveRecord::Schema.define(:version => 20121219201453) do
 
   add_index "dogs", ["breed_id"], :name => "index_dogs_on_breed_id"
   add_index "dogs", ["votes"], :name => "index_dogs_on_votes"
+
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "email"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
 end

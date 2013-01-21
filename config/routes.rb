@@ -7,7 +7,10 @@ MaxHouse::Application.routes.draw do
 
   resources :breeds
   resources :dogs
-
+  
+  match 'auth/provider/callback' => 'sessions#create'
+  match 'auth/failure' => redirect('/')
+  match 'signout' => 'sessions#destroy', as: 'signout'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
